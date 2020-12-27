@@ -1,10 +1,10 @@
 import {
-  join as pathJoin,
   basename as pathBasename,
+  join as pathJoin,
 } from "https://deno.land/std/path/mod.ts";
+import tmpdir from "https://deno.land/x/temp_dir@v1.0.0/mod.ts";
 
-const homedir: string | null = Deno.dir("home");
-const tmpdir: string | null = Deno.dir("tmp");
+const homedir = Deno.env.get("HOME");
 
 interface IOptions {
   suffix: string;
