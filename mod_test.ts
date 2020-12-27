@@ -1,4 +1,4 @@
-import { assertStrContains } from "https://deno.land/std/testing/asserts.ts";
+import { assertStringIncludes } from "https://deno.land/std/testing/asserts.ts";
 import envPaths from "./mod.ts";
 
 Deno.test("make sure it didnt throw any error", () => {
@@ -6,9 +6,9 @@ Deno.test("make sure it didnt throw any error", () => {
     suffix: "foo",
   });
 
-  assertStrContains(path.data, "test-foo");
-  assertStrContains(path.config, "test-foo");
-  assertStrContains(path.cache, "test-foo");
-  assertStrContains(path.log, "test-foo");
-  assertStrContains(path.temp, "test-foo");
+  assertStringIncludes(path.data, "test-foo");
+  assertStringIncludes(path.config, "test-foo");
+  assertStringIncludes(path.cache, "test-foo");
+  assertStringIncludes(path.log, "test-foo");
+  assertStringIncludes(path.temp, "test-foo");
 });
